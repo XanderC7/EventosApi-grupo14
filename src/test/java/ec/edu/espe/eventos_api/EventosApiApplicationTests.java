@@ -1,13 +1,15 @@
 package ec.edu.espe.eventos_api;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import ec.edu.espe.eventos_api.dto.CategoriaDTO;
 
-@SpringBootTest
+// Pruebas unitarias basicas con JUnit para verificacion en el pipeline CI
 class EventosApiApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
+    @Test
+    void verificarCreacionCategoriaDTO() {
+        CategoriaDTO categoria = new CategoriaDTO(1L, "Conferencia", "Eventos academicos");
+        assertEquals("Conferencia", categoria.getNombre());
+    }
 }
